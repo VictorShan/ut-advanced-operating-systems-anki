@@ -138,6 +138,227 @@
                 }
             ],
             "type": 0
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -4464610948833463727,
+                    "name": "Front",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": 6587438057748758503,
+                    "name": "Back",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Basic (type in the answer)",
+            "originalStockKind": 3,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0,
+                        1
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{Front}}\n\n<hr id=answer>\n\n{{type:Back}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": -4896926577839365357,
+                    "name": "Card 1",
+                    "ord": 0,
+                    "qfmt": "{{Front}}\n\n{{type:Back}}"
+                }
+            ],
+            "type": 0
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "b21fbf42-c337-11ee-ba01-25ef8c141b52",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -4383948725638622946,
+                    "name": "Front",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": 4817599719082624609,
+                    "name": "Back",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Basic (and reversed card)",
+            "originalStockKind": 1,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ],
+                [
+                    1,
+                    "any",
+                    [
+                        1
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": 7139096128228915901,
+                    "name": "Card 1",
+                    "ord": 0,
+                    "qfmt": "{{Front}}"
+                },
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Front}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": -2500009832825910422,
+                    "name": "Card 2",
+                    "ord": 1,
+                    "qfmt": "{{Back}}"
+                }
+            ],
+            "type": 0
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -933311556917618499,
+                    "name": "Text",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": true,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": 0
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -3374072642069009193,
+                    "name": "Back Extra",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": 1
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Cloze",
+            "originalStockKind": 5,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{cloze:Text}}<br>\n{{Back Extra}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": -6660205170811910628,
+                    "name": "Cloze",
+                    "ord": 0,
+                    "qfmt": "{{cloze:Text}}"
+                }
+            ],
+            "type": 1
         }
     ],
     "notes": [
@@ -149,7 +370,9 @@
             ],
             "guid": "o;8m*L<qzT",
             "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -159,6 +382,262 @@
             ],
             "guid": "p|S3d^}t]3",
             "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Name how the OS prevents processes from runnning forever",
+                "They use a timer interrupt (i.e. 5ms) which interrupts the process and allows the OS to run"
+            ],
+            "guid": "E%mPwXVPVi",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does the eax register do?",
+                "Holds to the return value of a function"
+            ],
+            "guid": "pWplbs8:wC",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What register holds the return value of a function?",
+                "eax"
+            ],
+            "guid": "tNXQ@/pTX`",
+            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How does a user process run system commands?",
+                "It switches into kernel mode to run system calls"
+            ],
+            "guid": "kjMohNpR{s",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The stack and heap space are not shared when performing a context switch. What is shared?",
+                "Most registers are shared when doing a context switch (so the need to be saved and loaded). What is not shared?"
+            ],
+            "guid": "Ae=yz0,%7m",
+            "note_model_uuid": "b21fbf42-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Where is the information in the registers stored during a context switch?",
+                "On the stack"
+            ],
+            "guid": "Q!n,fW5iO#",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Time sharing is can be accomplished through&nbsp; &nbsp;____ ____ _____?",
+                "Limited Direct Execution"
+            ],
+            "guid": "Ogi~)E_dv/",
+            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Limited Direct Execution is a way for the OS to do ___ ___",
+                "Time Sharing"
+            ],
+            "guid": "O9OlAaNJQo",
+            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why don't we have a layer between a process and execution on the processor?",
+                "Speed but less safe.<br><br>Not having a layer in between means that processes will have fast direct access to the hardware but not have the safety that having that layer can provide."
+            ],
+            "guid": "u&hR3u~:&@",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In order for the processors to \"run multiple processes at once\", it is actually using {{c1::Limited Direct Execution::3 words}} for {{c2::time sharing::2 words}}.",
+                ""
+            ],
+            "guid": "w&Ot$3XfWg",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Heaps grows&nbsp;{{c1::up::up/down}} in address space",
+                ""
+            ],
+            "guid": "N)f^Y?^OxT",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A stack grows {{c1::down::up/down}} in address space",
+                ""
+            ],
+            "guid": "JClBH$RWuo",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "<span style=\"color: rgb(237, 51, 59);\">Not</span> adding a layer between the process and the hardware {{c1::increases::increases/decreases}} speed and {{c1::decreases::increases/decreases}} safety",
+                "Not having a layer in between means that processes will have fast direct access to the hardware but not have the safety that having that layer can provide."
+            ],
+            "guid": "MD;27%?;eh",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::timer}} interrupt prevents long running processes from hogging resources",
+                ""
+            ],
+            "guid": "M.qpr`4I:V",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The process usually runs in&nbsp;{{c1::user}} mode but runs in {{c2::kernel}} mode when running system calls",
+                "Kernel mode is a \"Privileged State\" that starts off setting up the process before handing it off to user mode."
+            ],
+            "guid": "sbgfZt~v^}",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The interrupt handler can only be changed in {{c1::kernel}} mode",
+                ""
+            ],
+            "guid": "K20[(OIZ}|",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "System calls from {{c1::user::user/kernel}} mode invoke&nbsp;{{c2::trap}}s that tell the OS to run something in&nbsp;{{c3::kernel::user/kernel}} mode",
+                "System looks at the trap table and where the call's arguments are stored to know what to do"
+            ],
+            "guid": "vv7-R;iV}o",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which register tracks the next instruction?",
+                "eip"
+            ],
+            "guid": "P~1Z[:a2(l",
+            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::ebp}} register can be used to traverse back the chain of function calls",
+                ""
+            ],
+            "guid": "hJR$?3yygA",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What order do programs compile? (Assembler, Compiler, Linker, Loader)",
+                "Compiler -&gt; Assembler -&gt; Linker -&gt; Loader"
+            ],
+            "guid": "d;6h;xW2?h",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "During the start of a function call, a copy of&nbsp;{{c1::ebp::register}} is saved and {{c1::ebp::register}} is overwritten with&nbsp;{{c2::esp::register}}",
+                "esp is the stack pointer<br>ebp is the stack frame"
+            ],
+            "guid": "Grp,E0lvi5",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::strace}} is used to look at system calls a process executes",
+                ""
+            ],
+            "guid": "u6,9I.zR}/",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
             "tags": []
         }
     ],
