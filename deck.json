@@ -43,7 +43,7 @@
             "newGatherPriority": 0,
             "newMix": 0,
             "newPerDayMinimum": 0,
-            "newSortOrder": 0,
+            "newSortOrder": 4,
             "replayq": true,
             "rev": {
                 "bury": false,
@@ -141,6 +141,73 @@
         },
         {
             "__type__": "NoteModel",
+            "crowdanki_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -933311556917618499,
+                    "name": "Text",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": true,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": 0
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -3374072642069009193,
+                    "name": "Back Extra",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": 1
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Cloze",
+            "originalStockKind": 5,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{cloze:Text}}<br>\n{{Back Extra}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": -6660205170811910628,
+                    "name": "Cloze",
+                    "ord": 0,
+                    "qfmt": "{{cloze:Text}}"
+                }
+            ],
+            "type": 1
+        },
+        {
+            "__type__": "NoteModel",
             "crowdanki_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
             "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
             "flds": [
@@ -206,159 +273,6 @@
                 }
             ],
             "type": 0
-        },
-        {
-            "__type__": "NoteModel",
-            "crowdanki_uuid": "b21fbf42-c337-11ee-ba01-25ef8c141b52",
-            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
-            "flds": [
-                {
-                    "collapsed": false,
-                    "description": "",
-                    "excludeFromSearch": false,
-                    "font": "Arial",
-                    "id": -4383948725638622946,
-                    "name": "Front",
-                    "ord": 0,
-                    "plainText": false,
-                    "preventDeletion": false,
-                    "rtl": false,
-                    "size": 20,
-                    "sticky": false,
-                    "tag": null
-                },
-                {
-                    "collapsed": false,
-                    "description": "",
-                    "excludeFromSearch": false,
-                    "font": "Arial",
-                    "id": 4817599719082624609,
-                    "name": "Back",
-                    "ord": 1,
-                    "plainText": false,
-                    "preventDeletion": false,
-                    "rtl": false,
-                    "size": 20,
-                    "sticky": false,
-                    "tag": null
-                }
-            ],
-            "latexPost": "\\end{document}",
-            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
-            "latexsvg": false,
-            "name": "Basic (and reversed card)",
-            "originalStockKind": 1,
-            "req": [
-                [
-                    0,
-                    "any",
-                    [
-                        0
-                    ]
-                ],
-                [
-                    1,
-                    "any",
-                    [
-                        1
-                    ]
-                ]
-            ],
-            "sortf": 0,
-            "tmpls": [
-                {
-                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}",
-                    "bafmt": "",
-                    "bfont": "",
-                    "bqfmt": "",
-                    "bsize": 0,
-                    "did": null,
-                    "id": 7139096128228915901,
-                    "name": "Card 1",
-                    "ord": 0,
-                    "qfmt": "{{Front}}"
-                },
-                {
-                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Front}}",
-                    "bafmt": "",
-                    "bfont": "",
-                    "bqfmt": "",
-                    "bsize": 0,
-                    "did": null,
-                    "id": -2500009832825910422,
-                    "name": "Card 2",
-                    "ord": 1,
-                    "qfmt": "{{Back}}"
-                }
-            ],
-            "type": 0
-        },
-        {
-            "__type__": "NoteModel",
-            "crowdanki_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n",
-            "flds": [
-                {
-                    "collapsed": false,
-                    "description": "",
-                    "excludeFromSearch": false,
-                    "font": "Arial",
-                    "id": -933311556917618499,
-                    "name": "Text",
-                    "ord": 0,
-                    "plainText": false,
-                    "preventDeletion": true,
-                    "rtl": false,
-                    "size": 20,
-                    "sticky": false,
-                    "tag": 0
-                },
-                {
-                    "collapsed": false,
-                    "description": "",
-                    "excludeFromSearch": false,
-                    "font": "Arial",
-                    "id": -3374072642069009193,
-                    "name": "Back Extra",
-                    "ord": 1,
-                    "plainText": false,
-                    "preventDeletion": false,
-                    "rtl": false,
-                    "size": 20,
-                    "sticky": false,
-                    "tag": 1
-                }
-            ],
-            "latexPost": "\\end{document}",
-            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
-            "latexsvg": false,
-            "name": "Cloze",
-            "originalStockKind": 5,
-            "req": [
-                [
-                    0,
-                    "any",
-                    [
-                        0
-                    ]
-                ]
-            ],
-            "sortf": 0,
-            "tmpls": [
-                {
-                    "afmt": "{{cloze:Text}}<br>\n{{Back Extra}}",
-                    "bafmt": "",
-                    "bfont": "",
-                    "bqfmt": "",
-                    "bsize": 0,
-                    "did": null,
-                    "id": -6660205170811910628,
-                    "name": "Cloze",
-                    "ord": 0,
-                    "qfmt": "{{cloze:Text}}"
-                }
-            ],
-            "type": 1
         }
     ],
     "notes": [
@@ -389,30 +303,6 @@
         {
             "__type__": "Note",
             "fields": [
-                "What does the eax register do?",
-                "Holds to the return value of a function"
-            ],
-            "guid": "pWplbs8:wC",
-            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
-            "tags": [
-                "cpu-virtualization"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
-                "What register holds the return value of a function?",
-                "eax"
-            ],
-            "guid": "tNXQ@/pTX`",
-            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
-            "tags": [
-                "cpu-virtualization"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
                 "How does a user process run system commands?",
                 "It switches into kernel mode to run system calls"
             ],
@@ -425,47 +315,11 @@
         {
             "__type__": "Note",
             "fields": [
-                "The stack and heap space are not shared when performing a context switch. What is shared?",
-                "Most registers are shared when doing a context switch (so the need to be saved and loaded). What is not shared?"
-            ],
-            "guid": "Ae=yz0,%7m",
-            "note_model_uuid": "b21fbf42-c337-11ee-ba01-25ef8c141b52",
-            "tags": [
-                "cpu-virtualization"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
                 "Where is the information in the registers stored during a context switch?",
                 "On the stack"
             ],
             "guid": "Q!n,fW5iO#",
             "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
-            "tags": [
-                "cpu-virtualization"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
-                "Time sharing is can be accomplished through&nbsp; &nbsp;____ ____ _____?",
-                "Limited Direct Execution"
-            ],
-            "guid": "Ogi~)E_dv/",
-            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
-            "tags": [
-                "cpu-virtualization"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
-                "Limited Direct Execution is a way for the OS to do ___ ___",
-                "Time Sharing"
-            ],
-            "guid": "O9OlAaNJQo",
-            "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
             "tags": [
                 "cpu-virtualization"
             ]
@@ -621,7 +475,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::strace}} is used to look at system calls a process executes",
+                "{{c1::strace::Program}} is used to look at system calls a process executes",
                 ""
             ],
             "guid": "u6,9I.zR}/",
@@ -651,6 +505,26 @@
             "tags": [
                 "cpu-virtualization"
             ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c2::Limited Direct Execution}} is a way for the OS to do&nbsp;{{c1::time sharing}}",
+                ""
+            ],
+            "guid": "pWt*?g5&x]",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::eax}} register holds the&nbsp;{{c2::return value of a function}}",
+                ""
+            ],
+            "guid": "FR8DCHf.`s",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": []
         }
     ],
     "reviewLimit": null,
