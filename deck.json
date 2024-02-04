@@ -389,18 +389,6 @@
         {
             "__type__": "Note",
             "fields": [
-                "Name how the OS prevents processes from runnning forever",
-                "They use a timer interrupt (i.e. 5ms) which interrupts the process and allows the OS to run"
-            ],
-            "guid": "E%mPwXVPVi",
-            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
-            "tags": [
-                "cpu-virtualization"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
                 "What does the eax register do?",
                 "Holds to the return value of a function"
             ],
@@ -639,6 +627,30 @@
             "guid": "u6,9I.zR}/",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
             "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Timer interrupts}} are used to allow the OS to run when there are long running processes",
+                "If it didn't get interrupted, the process could potentially run forever and never exit"
+            ],
+            "guid": "cAx1EJ[;#:",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::stack}} and the&nbsp;{{c1::heap}} are shared when performing a context switch. Most {{c2::registers}} are shared so their data needs to be saved during context swtiches",
+                ""
+            ],
+            "guid": "APwHAo:f~Y",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
         }
     ],
     "reviewLimit": null,
