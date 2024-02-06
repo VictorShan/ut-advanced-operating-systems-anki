@@ -8,7 +8,7 @@
             "__type__": "DeckConfig",
             "answerAction": 0,
             "autoplay": true,
-            "buryInterdayLearning": false,
+            "buryInterdayLearning": true,
             "crowdanki_uuid": "4f8e0eb4-be83-11ee-862a-37a7848dbfde",
             "desiredRetention": 0.9,
             "dyn": false,
@@ -26,7 +26,7 @@
             "maxTaken": 60,
             "name": "Default",
             "new": {
-                "bury": false,
+                "bury": true,
                 "delays": [
                     1.0,
                     10.0
@@ -46,7 +46,7 @@
             "newSortOrder": 4,
             "replayq": true,
             "rev": {
-                "bury": false,
+                "bury": true,
                 "ease4": 1.3,
                 "hardFactor": 1.2,
                 "ivlFct": 1.0,
@@ -192,7 +192,7 @@
             "sortf": 0,
             "tmpls": [
                 {
-                    "afmt": "{{cloze:Text}}<br>\n{{Back Extra}}",
+                    "afmt": "{{cloze:Text}}<br><br>\n{{Back Extra}}",
                     "bafmt": "",
                     "bfont": "",
                     "bqfmt": "",
@@ -523,6 +523,160 @@
                 ""
             ],
             "guid": "FR8DCHf.`s",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": []
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Traps::Traps/Interrupts}} occur when a user program makes a system call or results in an exception; {{c1::Interrupts::Traps/Interrupts}} are initiated by hardware devices",
+                ""
+            ],
+            "guid": "FD<r=|>h_O",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Running time::Metric}}, {{c2::throughput::metric}},&nbsp; {{c3::fairness::metric}},&nbsp;{{c6::turnaround time}}, and&nbsp;{{c4::response time}} are metrics used to evaulate {{c5::scheduling policies}}",
+                "Running time = Actual time the process is running<br>Throughput = Time per process<br>Fairness = Are processes being starved?<br>Response Time = Time to first execution<br>Turnaround time = Total time taken to execute a particular process (including wait)"
+            ],
+            "guid": "PJ6}m!xJv1",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::FIFO::Scheduling policy}} can have a high {{c2::response time::metric}} in the case where there is a long process followed by short process",
+                "If the short process is interactive, that means the user could be waiting for a long time before they can interact again.<br><br>Turnaround time == response time"
+            ],
+            "guid": "Ayw^!:s_;n",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::SJF::Scheduling policy}} is great for&nbsp;{{c2::response time::metric}} but is dependent on the arrival time of processes",
+                "SJF = Shortest Job First<br>This is ideal if all jobs arrive at the same time. If they come sequentially, then it will be the same as FIFO"
+            ],
+            "guid": "xN7^weKmmu",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::SJCF::Scheduling policy}} will context switch from larger jobs to finish smaller ones first",
+                "SJCF = Shortest Job Completed First<br>Determines which jobs are \"larger\" by running time left<br><br>"
+            ],
+            "guid": "Opj,fReeX%",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The {{c1::Round Robin}} scheduling policy is very fair because every process gets a set amount of time each iteration",
+                "Not good response time because it can take a long time for a job to finish if there are many different jobs that all need to execute a bit before we come back to the first one"
+            ],
+            "guid": "PPKON6`VN0",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Pre-emptive scheduling}} is when a kernel scheduler de-schedules a process post&nbsp;{{c2::timer interrupt}} and schedules another process",
+                "Will need to use context switch"
+            ],
+            "guid": "qD]CCC%hyB",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "When a user space process issues an I/O call, another process&nbsp;{{c1::can::can/cannot}} be scheduled to utilize idle CPU. This&nbsp;{{c2::is not::is/is not}} preemptive scheduling",
+                "This is not preemptive scheduling since the OS didn’t stop the user space process from executing further, it was just the fact that the process was waiting for some I/O which allowed the other process to be scheduled."
+            ],
+            "guid": "hg,h#<j4X@",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::fairness::scheduling metric}} metric considers&nbsp;{{c2::resource allocation}},&nbsp;{{c3::starvation}},&nbsp;{{c4::priority and preemption}},&nbsp;{{c5::scheduling algorithm}} and&nbsp;{{c6::response time for interactive users}}",
+                ""
+            ],
+            "guid": "q:c!`#D^!>",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Response times&nbsp;{{c1::increases::increases/decreases/stays the same}} in SJF as job lengths increase",
+                "SJF = Shortest Job First"
+            ],
+            "guid": "yZ$y1N/Z[~",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Response times&nbsp;{{c1::increases::increases/decreases/stays the same}} in RR as time slice lengths are increased",
+                "RR = Round Robin"
+            ],
+            "guid": "Ra(hnR|-9y",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Response time::Scheduling metric}} is the time from arrival to first execution while&nbsp;{{c2::turnaround time::scheduling metric}} is the time from arrival to process completion",
+                ""
+            ],
+            "guid": "A;#9rKGFW)",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "There&nbsp;{{c1::is not::is/is not}} a scheduling policy that has both better response times and turnaround times than FIFO, SJF, SJCF, and RR",
+                "This is a classic trade-off space and any scheduler which does well in turnaround time metric would perform poorly for response times; moreover a scheduler which does well for some workloads would perform poorly for some other workloads."
+            ],
+            "guid": "m_N~$Cmew>",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
             "tags": []
         }
