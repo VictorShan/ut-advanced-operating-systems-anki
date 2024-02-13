@@ -440,7 +440,9 @@
             ],
             "guid": "P~1Z[:a2(l",
             "note_model_uuid": "b21fbb46-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -450,7 +452,9 @@
             ],
             "guid": "hJR$?3yygA",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -460,7 +464,9 @@
             ],
             "guid": "d;6h;xW2?h",
             "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -470,7 +476,9 @@
             ],
             "guid": "Grp,E0lvi5",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -480,7 +488,9 @@
             ],
             "guid": "u6,9I.zR}/",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -509,12 +519,14 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c2::Limited Direct Execution}} is a way for the OS to do&nbsp;{{c1::time sharing}}",
+                "{{c2::Limited Direct Execution::Specific thing}} is a way for the OS to do&nbsp;{{c1::time sharing}}",
                 ""
             ],
             "guid": "pWt*?g5&x]",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -524,7 +536,9 @@
             ],
             "guid": "FR8DCHf.`s",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization"
+            ]
         },
         {
             "__type__": "Note",
@@ -601,7 +615,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::Pre-emptive scheduling}} is when a kernel scheduler de-schedules a process post&nbsp;{{c2::timer interrupt}} and schedules another process",
+                "{{c1::Pre-emptive scheduling}} is when a kernel scheduler de-schedules a process post&nbsp;{{c2::timer interrupt::some event}} and schedules another process",
                 "Will need to use context switch"
             ],
             "guid": "qD]CCC%hyB",
@@ -678,7 +692,167 @@
             ],
             "guid": "m_N~$Cmew>",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
-            "tags": []
+            "tags": [
+                "cpu-virtualization",
+                "scheduler"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In&nbsp;{{c1::CFS::scheduling policy}}, a&nbsp;{{c2::heap::data structure}} is used to track the process with the least&nbsp;{{c3::virtual runtime::metric}} to run next",
+                "CFS&nbsp; = Completely Fair Scheduler (used in linux kernel)"
+            ],
+            "guid": "EQV2taxA*W",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "linux-kernel",
+                "scheduler"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Virtual runtime::Metric}} is calculated from the&nbsp;{{c2::execution time::metric}} and ideal&nbsp;{{c2::execution time::metric}}",
+                "CFS (completely fair scheduler) tries to get the process that was executed the least (lowest VR)<br><br>Additional factors that priority, how many processes are trying to use, how much the processes actually ran, etc. also affect the VR value"
+            ],
+            "guid": "Bt;ER3cP2J",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "linux-kernel",
+                "scheduler"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "When you open a file, the file descriptor will be the&nbsp;{{c1::smallest::random/biggest/smallest}} available number",
+                "By default, STDIN is 0, STDOUT is 1, STDERR is 2. You can replace STDOUT by closing that file and opening a different file (which will default to smallest available number 1)"
+            ],
+            "guid": "c)[;bNJ4+T",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Every thread has its own&nbsp;{{c1::eip}},&nbsp;{{c2::stack}}, and {{c3::registers}} but they share a&nbsp;{{c4::heap}}",
+                "eip = Instruction Pointer"
+            ],
+            "guid": "FAdRlVo.+]",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "You&nbsp;{{c1::have to::have to/don't have to}} do context switches for threads",
+                "You can only run one thread at a time on a physical processor"
+            ],
+            "guid": "fJGA){5sxO",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Reasons to use&nbsp;{{c1::threads}} include higher {{c2::parallelism}} and more efficiently running {{c3::blocking}} operations",
+                "It offers more parallelism because thread context switches have less overhead than full process context switches (putting process to sleep, selecting another process, etc)<br><br>IO ops can be more efficient when the process has blocking actions (disk reads) that take a system call where another thread can take over"
+            ],
+            "guid": "b_}V!k:S=0",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Threads&nbsp;{{c1::are::are/are not}} run in the same order they are spawned, which causes&nbsp;{{c2::race conditions::phenomenon}}",
+                "The order threads are run depends on what the scheduler decides"
+            ],
+            "guid": "p.R?M<xGKW",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The processor has an {{c1::event loop}} that runs&nbsp;{{c2::forever}} and does not cause&nbsp;{{c3::data races}} because the OS is not scheduling anything",
+                "Th event loop performs first part of large task and places the rest as an event in a&nbsp;queue to be performed later"
+            ],
+            "guid": "tiRjy-2;W[",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Using user space scheduling (like&nbsp;{{c1::event loop}}) can be more efficient than OS scheduling and is&nbsp;{{c2::more::more/less}} complex",
+                "Applications can schedule instead of the OS. Is more complex because you have to pause and resume processes.&nbsp;"
+            ],
+            "guid": "os*C[%sp-*",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "events"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Spawning threads can be/is&nbsp;{{c1::expensive::cheap/expensive}} so you can keep a&nbsp;{{c2::pool of threads}} constantly running",
+                ""
+            ],
+            "guid": "zq194|KgPz",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Nginx uses&nbsp;{{c1::events::threads/events}}",
+                ""
+            ],
+            "guid": "zUZA*0J;-|",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization",
+                "events",
+                "threads"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Mutual execution::Idea}} is using&nbsp;{{c2::locks}} to control which processes/threads can read/write to data using {{c3::CAS::hardware primitive}}",
+                "CAS = Compare And Swap (View lock, is free?, lock) in one operation, if 2 operations than there can be race conditions"
+            ],
+            "guid": "Hg@hr)K-^;",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
         }
     ],
     "reviewLimit": null,
