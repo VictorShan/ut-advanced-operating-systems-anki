@@ -507,7 +507,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "The&nbsp;{{c1::stack}} and the&nbsp;{{c1::heap}} are shared when performing a context switch. Most {{c2::registers}} are shared so their data needs to be saved during context swtiches",
+                "The&nbsp;{{c1::stack}} and the&nbsp;{{c1::heap}} are shared when performing a context switch. Most {{c2::registers}} are shared so their data needs to be saved during context switches",
                 ""
             ],
             "guid": "APwHAo:f~Y",
@@ -663,8 +663,8 @@
         {
             "__type__": "Note",
             "fields": [
-                "Response times&nbsp;{{c1::increases::increases/decreases/stays the same}} in RR as time slice lengths are increased",
-                "RR = Round Robin"
+                "Response times&nbsp;{{c1::increases::increases/decreases/stays the same}} in Round Robin as time slice lengths are increased",
+                ""
             ],
             "guid": "Ra(hnR|-9y",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
