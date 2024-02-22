@@ -780,7 +780,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Threads&nbsp;{{c1::are::are/are not}} run in the same order they are spawned, which causes&nbsp;{{c2::race conditions::phenomenon}}",
+                "Threads&nbsp;{{c1::are not::are/are not}} run in the same order they are spawned, which causes&nbsp;{{c2::race conditions::phenomenon}}",
                 "The order threads are run depends on what the scheduler decides"
             ],
             "guid": "p.R?M<xGKW",
