@@ -853,6 +853,114 @@
             "tags": [
                 "cpu-virtualization"
             ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Bugs in code/Malicious code can cause accesses/writes to another process' memory when using&nbsp;{{c1::static relocation::memory virtualization approach}} due to the offset",
+                "Static Relocation allocates chunks of memory to a process and uses an offset to determine the real memory. There is no isolation or ability to reorganize memory because they are all in relation to each other"
+            ],
+            "guid": "K4D{-iu0%y",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In&nbsp;{{c1::static relocation::memory virtualization approach}}, you can only assign a process' memory once",
+                "Static relocation only allows you to set the process' memory range once because every process gets a block of memory. There locations are offset by process-wide memory offset"
+            ],
+            "guid": "N=r}M}|l3D",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::Base and Bounds::memory virtualization approach}} uses two registers to find the block of memory and isolates process memory and&nbsp;{{c2::allows::allows/doesn't allow}} relocating memory",
+                "Base and Bounds uses base offset for the memory block and bounds register to define the max memory. Relocating a process memory involves copying memory and updating the two registers to make room for other processes.&nbsp;"
+            ],
+            "guid": "bIAiFUA!tE",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Both&nbsp;{{c1::static relocation::memory virtualization approach}} and&nbsp;{{c2::base and bound::memory virtualization approach}} {{c3::correctly::correctly/incorrectly}} assumes that a process uses one contiguous block of memory",
+                "Most of the process is empty because there is a lot of unused space between the heap, stack and code"
+            ],
+            "guid": "x@8::n[;;a",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In&nbsp;{{c1::segmentation::memory virtualization approach}} involves splitting the process memory into 3 parts&nbsp;{{c2::code, heap, stack::regions of process memory}}",
+                "Each of these segments can be stored separately that are intermixed (P1stack, P2stack, P2heap,P1code...) which allows more of the physical memory to be used"
+            ],
+            "guid": "iShCg[*`+h",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::segmentation::memory virtualization approach}} is an extension of the {{c2::base and bounds::memory virtualization approach}} except it uses two extra&nbsp;{{c3::registers}} for a memory block to determine {{c4::direction}} and {{c5::permissions}}",
+                "An extra register determines the direction to know which way the memory grows (down for stack, up for heap and code). Another register determine permissions for memory segment"
+            ],
+            "guid": "hef[]+H!VV",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In&nbsp;{{c2::segmentation::memory virtualization approach}}, the {{c1::memory address}} determines whether it is the code, stack or heap",
+                "This can be encoded with (first) two bits of the memory address (3 options). This uses very little memory to determine"
+            ],
+            "guid": "QLxkvO#hC]",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In memory virtualization, all the registers used to keep track of memory blocks are&nbsp;{{c1::saved::saved/lost}} during context switch",
+                ""
+            ],
+            "guid": "F10fn6[,UU",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Fragmentaiton}} is when unallocated memory between allocated blocks that cannot be used but can be fixed/removed by an expensive&nbsp;{{c2::compacting}} operation",
+                "Fragmentation usually happens to small chunks of memory.<br>Compacting copies large chunks of memory so they are expensive to perform.<br>Happens in segmentation, base and bounds, and static relocation"
+            ],
+            "guid": "io&?Tud~Yn",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
         }
     ],
     "reviewLimit": null,
