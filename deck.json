@@ -961,6 +961,162 @@
             "tags": [
                 "memory-virtualization"
             ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Heap&nbsp;{{c1::is::is/is not}} often consumed as a growing block",
+                "Heap doesn't grow like the stack does.&nbsp; This is because of allocating and deallocating from malloc and free"
+            ],
+            "guid": "o]Nb-2[!xq",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Using paging, we {{c1::will::will/will not}} need to copy entire stacks/heaps/code around to defragement",
+                "This is because we can just allocate unused pages and assign them to a different process so there is no need for widescale copying for defragmentation"
+            ],
+            "guid": "p6?W{sl2|n",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A page is usually&nbsp;{{c1::4kb::storage size}} in modern systems",
+                ""
+            ],
+            "guid": "c~YUbFJm^v",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Using pages reduce&nbsp;{{c1::external fragmentation}} but causes {{c2::internal fragmentation}}",
+                "There can be fragmentation within pages. Reducing page size reduces fragmentation but increases page table size"
+            ],
+            "guid": "D:]-}kg612",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "This first part of the virtual address is the&nbsp;{{c3::page directory entry}} followed by the {{c1::page number}} and finally the {{c2::physical memory offset}}",
+                "Virtual page is translated to physical page and then the offset is applied.<br><br>10 bits for page directory entry<br>10 bits for paget table entry<br>12 bits for physical offset"
+            ],
+            "guid": "bj1YKa<5hK",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A page table includes mappings for {{c1::allocated::allocated/all}} virtual pages",
+                "Some virtual addresses may not be mapped to physical pages. There is an extra valid bit column"
+            ],
+            "guid": "pin:XRKP<^",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::OS}} is responsible for allocating and freeing physical pages",
+                ""
+            ],
+            "guid": "sbJC[QW|%C",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The page table is stored in&nbsp;{{c1::memory}} (located at the address stored in {{c3::PTBR}}) and {{c2::MMU}} uses it to translate from virtual to physical address and read its contents",
+                "MMU = Memory Management Unit (Hardware)<br>PTBR = Page Table Base Register points to start of page table (privileged register)"
+            ],
+            "guid": "i+B8}$EsL;",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "If the page table contains all pages, accessing physical address costs&nbsp;{{c1::2::number}} memory accesses.&nbsp;{{c2::TLB}} solves this this",
+                "1. Acccess to get page translation 2. Access to get content at physical address<br>TLB = Translation Lookahead Buffer"
+            ],
+            "guid": "kC)-9,#I~k",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::TLB}} can be thought of a small cache that's much faster than DRAM",
+                "Translation Lookaside Buffer is used to cache page table entries to avoid memory access"
+            ],
+            "guid": "4ONxGH|(4",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Temporal Locality}} is the tendency for programs to access memory near where it has already read",
+                "This is what makes Translation Lookaside Buffer work because it is much smaller and temporal locallity means that the cache entries are used frequently. We avoid looking at page table. Caching is performed in hardware"
+            ],
+            "guid": "QSLwj6.D/<",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Processes access page tables more often after context switches because the&nbsp;{{c1::TLB}} was flushed",
+                "Translation Lookaside Table is flushed during context switches so processes are slower after switches"
+            ],
+            "guid": "lKdm3j/}%1",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
         }
     ],
     "reviewLimit": null,
