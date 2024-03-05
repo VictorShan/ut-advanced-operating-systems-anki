@@ -857,6 +857,42 @@
         {
             "__type__": "Note",
             "fields": [
+                "Each process has an&nbsp;{{c1::isolated::shared/isolated}} and {{c2::identical::identical/different}} address range",
+                "This means processes can't interfere with each other, can't view another's data, and have predictable address spaces"
+            ],
+            "guid": "Fvr_O;I>Jc",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Virtual}} system calls avoid doing a full context switch because they are called with&nbsp;{{c2::read-only::read-only/write-only/read-write/no}} access that can be called in {{c3::user::user/kernel}}-space",
+                "Example includes minor things like getting current datetime which uses a virtual variable to access value"
+            ],
+            "guid": "lI]H$&-`pl",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::VDSO}} has better security and is not limited in size",
+                "Virtual Dynamic Shared Objects do not have fixed addresses allowing for better flexibility and security"
+            ],
+            "guid": "?5pRGKj}J",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
                 "Bugs in code/Malicious code can cause accesses/writes to another process' memory when using&nbsp;{{c1::static relocation::memory virtualization approach}} due to the offset",
                 "Static Relocation allocates chunks of memory to a process and uses an offset to determine the real memory. There is no isolation or ability to reorganize memory because they are all in relation to each other"
             ],
