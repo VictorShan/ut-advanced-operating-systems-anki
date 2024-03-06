@@ -1153,6 +1153,123 @@
                 "memory-virtualization",
                 "paging"
             ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In a virtual address, the first 10 bits is the&nbsp;{{c1::page table directory}} and the next 10 is the&nbsp;{{c2::page table entry}} and the final 12 is the&nbsp;{{c3::memory offset}}",
+                ""
+            ],
+            "guid": "myH7&j0SK;",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A page directory saves space because&nbsp;{{c1::some::some/all}} tables are allocated",
+                "A bit tells us if the page directory entry is an allocated page table. This saves space because we can omit whole sub-tables from allocation thus saving on the space because not all memory needs to be mapped."
+            ],
+            "guid": "F!_Z%hra<+",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Without&nbsp;{{c1::TLB}},&nbsp;{{c2::multi-level page tables}} would be slower than one big page table",
+                "Translation lookaside buffer caches entries so it makes the two memory accesses from using multi level tables less expensive"
+            ],
+            "guid": "fq6uRqjuDI",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::CR3}} register holds the address to the page table directory",
+                "This needs to be stored and restored during context switches"
+            ],
+            "guid": "y?aA!#)8J:",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In 64 bit system, the top&nbsp;{{c1::16}} bits are not used and the address will only be the last&nbsp;{{c2::48}} bits",
+                "The 48 bits are separated into 9 bit global directory, 9 bit upper, 9 bit middle, 9 bit lower directories and 12 bit offset. All translations done in hardware"
+            ],
+            "guid": "vUYE@O}7Yl",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A&nbsp;{{c1::page fault}} happens when a virtual address cannot be translated to a physical address",
+                "Using a 'present' flag in the page table entry. We don't want to allocate&nbsp;\\(2^{32}-1\\)&nbsp;bytes (4GB) for every process."
+            ],
+            "guid": "zo`NQk],kw",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "When a page fault happens, the&nbsp;{{c1::hardware}} will call the&nbsp;{{c2::OS}} to allocate physical memory",
+                "Page faults are expensive"
+            ],
+            "guid": "O]*qQ$ZDF8",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Page faults are expensive becaues they involve the OS&nbsp;{{c1::finding free physical memory}},&nbsp;{{c2::page walk}},&nbsp;{{c3::change entry in table}}",
+                "Page walk is needed to find the page table entry that repsents that address. That entry then needs to be changed. We can pre-fault pages to pre-allocate them"
+            ],
+            "guid": "IZr}4y2dOy",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "To avoid page faults, you can&nbsp;{{c1::pre-fault}} by&nbsp;{{c2::writing/reading 1 bit to every page}}",
+                ""
+            ],
+            "guid": "NBc0@j8RJT",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
         }
     ],
     "reviewLimit": null,
