@@ -555,7 +555,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::Running time::Metric}}, {{c2::throughput::metric}},&nbsp; {{c3::fairness::metric}},&nbsp;{{c6::turnaround time}}, and&nbsp;{{c4::response time}} are metrics used to evaulate {{c5::scheduling policies}}",
+                "{{c1::Running time::Metric}}, {{c2::throughput::metric}}, {{c3::fairness::metric}},&nbsp;{{c6::turnaround time}}, and&nbsp;{{c4::response time}} are metrics used to evaulate {{c5::scheduling policies}}",
                 "Running time = Actual time the process is running<br>Throughput = Time per process<br>Fairness = Are processes being starved?<br>Response Time = Time to first execution<br>Turnaround time = Total time taken to execute a particular process (including wait)"
             ],
             "guid": "PJ6}m!xJv1",
@@ -845,7 +845,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::Mutual execution::Idea}} is using&nbsp;{{c2::locks}} to control which processes/threads can read/write to data using {{c3::CAS::hardware primitive}}",
+                "{{c1::Mutual exclusion::Idea}} is using&nbsp;{{c2::locks}} to control which processes/threads can read/write to data using {{c3::CAS::hardware primitive}}",
                 "CAS = Compare And Swap (View lock, is free?, lock) in one operation, if 2 operations than there can be race conditions"
             ],
             "guid": "Hg@hr)K-^;",
@@ -989,7 +989,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::Fragmentaiton}} is when unallocated memory between allocated blocks that cannot be used but can be fixed/removed by an expensive&nbsp;{{c2::compacting}} operation",
+                "{{c1::Fragmentation}} is when unallocated memory between allocated blocks that cannot be used but can be fixed/removed by an expensive&nbsp;{{c2::compacting}} operation",
                 "Fragmentation usually happens to small chunks of memory.<br>Compacting copies large chunks of memory so they are expensive to perform.<br>Happens in segmentation, base and bounds, and static relocation"
             ],
             "guid": "io&?Tud~Yn",
@@ -1001,7 +1001,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Heap&nbsp;{{c1::is::is/is not}} often consumed as a growing block",
+                "Heap&nbsp;{{c1::is not::is/is not}} often consumed as a growing block",
                 "Heap doesn't grow like the stack does.&nbsp; This is because of allocating and deallocating from malloc and free"
             ],
             "guid": "o]Nb-2[!xq",
@@ -1014,7 +1014,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Using paging, we {{c1::will::will/will not}} need to copy entire stacks/heaps/code around to defragement",
+                "Using paging, we {{c1::will not::will/will not}} need to copy entire stacks/heaps/code around to defragement",
                 "This is because we can just allocate unused pages and assign them to a different process so there is no need for widescale copying for defragmentation"
             ],
             "guid": "p6?W{sl2|n",
@@ -1053,7 +1053,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "This first part of the virtual address is the&nbsp;{{c3::page directory entry}} followed by the {{c1::page number}} and finally the {{c2::physical memory offset}}",
+                "This first part of the virtual address is the&nbsp;{{c3::page directory entry}} followed by the {{c1::page table entry}} and finally the {{c2::physical memory offset}}",
                 "Virtual page is translated to physical page and then the offset is applied.<br><br>10 bits for page directory entry<br>10 bits for paget table entry<br>12 bits for physical offset"
             ],
             "guid": "bj1YKa<5hK",
@@ -1265,6 +1265,71 @@
                 ""
             ],
             "guid": "NBc0@j8RJT",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "If you run out of physical memory, you can store pages in&nbsp;{{c1::storage}} and your system will&nbsp;{{c2::slow down::speed up/slow down}}",
+                "Storage includes Hard disk or USB, or other slower memory. It will slow down because accessing those swapped out pages is very slow because it has to be swapped back first"
+            ],
+            "guid": "ORp7;{pk]T",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Common page swapping strategies include&nbsp;{{c1::LRU}} or&nbsp;{{c2::FIFO}}",
+                "LRU = Least Recently Used<br>FIFO = First In First Out"
+            ],
+            "guid": "imBo?C_d@F",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::mmap}} systemcall allows you to directly control your virtual memory address",
+                "Man def: program allocates memory, or map files or devices onto memory"
+            ],
+            "guid": "iq>5yTy,t8",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The&nbsp;{{c1::mmap}} system call is very barebones. It maps physical address space to your own address space",
+                "Does all the page table edits needed to allocate that page. It cal also allow you to map physical memory used by other processes (shared page can be used for communication)"
+            ],
+            "guid": "d?I0={26Q;",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "When mmap maps a file, it uses the OS {{c1::page cache}} to map the cached version.",
+                "Use msync to sync changes to storage"
+            ],
+            "guid": "w,*mAS]_bp",
             "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
             "tags": [
                 "memory-virtualization",
