@@ -929,7 +929,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Both&nbsp;{{c1::static relocation::memory virtualization approach}} and&nbsp;{{c2::base and bound::memory virtualization approach}} {{c3::correctly::correctly/incorrectly}} assumes that a process uses one contiguous block of memory",
+                "Both&nbsp;{{c1::static relocation::memory virtualization approach}} and&nbsp;{{c2::base and bound::memory virtualization approach}} {{c3::incorrectly::correctly/incorrectly}} assumes that a process uses one contiguous block of memory",
                 "Most of the process is empty because there is a lot of unused space between the heap, stack and code"
             ],
             "guid": "x@8::n[;;a",
@@ -989,7 +989,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::Fragmentation}} is when unallocated memory between allocated blocks that cannot be used but can be fixed/removed by an expensive&nbsp;{{c2::compacting}} operation",
+                "{{c1::Fragmentation}} is&nbsp;unallocated memory between allocated blocks that cannot be used but can be fixed/removed by an expensive&nbsp;{{c2::compacting}} operation",
                 "Fragmentation usually happens to small chunks of memory.<br>Compacting copies large chunks of memory so they are expensive to perform.<br>Happens in segmentation, base and bounds, and static relocation"
             ],
             "guid": "io&?Tud~Yn",
@@ -1118,7 +1118,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "{{c1::TLB}} can be thought of a small cache that's much faster than DRAM",
+                "{{c1::TLB}} can be thought of a small cache for page table entries that's much faster than DRAM",
                 "Translation Lookaside Buffer is used to cache page table entries to avoid memory access"
             ],
             "guid": "4ONxGH|(4",
@@ -1248,7 +1248,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Page faults are expensive becaues they involve the OS&nbsp;{{c1::finding free physical memory}},&nbsp;{{c2::page walk}},&nbsp;{{c3::change entry in table}}",
+                "Page faults are expensive becaues they involve the OS&nbsp;{{c1::finding free physical memory}},&nbsp;{{c2::page walk}}, and {{c3::changing entry in table}}",
                 "Page walk is needed to find the page table entry that repsents that address. That entry then needs to be changed. We can pre-fault pages to pre-allocate them"
             ],
             "guid": "IZr}4y2dOy",
@@ -1287,7 +1287,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Common page swapping strategies include&nbsp;{{c1::LRU}} or&nbsp;{{c2::FIFO}}",
+                "Common page swapping strategies include&nbsp;{{c1::LRU}} and {{c2::FIFO}}",
                 "LRU = Least Recently Used<br>FIFO = First In First Out"
             ],
             "guid": "imBo?C_d@F",
@@ -1334,6 +1334,79 @@
             "tags": [
                 "memory-virtualization",
                 "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c2::malloc}} uses a {{c1::heap allocator}} to find the best or first memory chunk that fits",
+                ""
+            ],
+            "guid": "GeRA(8_kSN",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How does free know how much memory to free when only given pointer address?",
+                "There's a header section before the point address returned that tells use the size"
+            ],
+            "guid": "P%|{%n+HfO",
+            "note_model_uuid": "4f8e16d4-be83-11ee-862a-37a7848dbfde",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "When using {{c1::garbage collection}}, the memory can only be freed after there are 0&nbsp;{{c2::references}} left",
+                "Garbage collection might not happen immediately after there are 0 reference. You must wait for it to happen to reclaim space"
+            ],
+            "guid": "v(nYgs,{BL",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The disadvantages of {{c3::huge pages}} include high page {{c2::fault latency}} and {{c1::memory bloating}}",
+                "Also unfair huge page allocation and uncoordinated memory management"
+            ],
+            "guid": "gvvKt5yRAL",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "memory-virtualization",
+                "paging"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "&nbsp; Ingens {{c1::asynch::sync/async}}onously allocates huge pages",
+                "It allocates the rest in the background by shuffling pages around"
+            ],
+            "guid": "g&zz*^{_Hy",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Ingens groups {{c1::continous}} allocated virtual memory into {{c2::one huge page}} to reduce page table entries",
+                ""
+            ],
+            "guid": "ly,cksZqr@",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "cpu-virtualization"
             ]
         }
     ],
