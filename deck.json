@@ -1408,6 +1408,78 @@
             "tags": [
                 "cpu-virtualization"
             ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Tape}} is the cheapest long term storage option",
+                "Costs about 1 cent per GB. Requires rewinding to read previous data."
+            ],
+            "guid": "GRFCkqGwT2",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Magnetic Hard Drives}} have good capacity but has slow latency 10ms",
+                "Not as reliable and more expensive tape but much faster. Not fast enough for services."
+            ],
+            "guid": "F6C25~(9Mi",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Hard drives}} has many moving parts but&nbsp;{{c2::SSD}}s have no moving parts and are much faster",
+                "Hard drive latency is at 10ms while SSD latency is at 20-100us"
+            ],
+            "guid": "t+V,hy}fn4",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Persistent Memory}} has 100-500ns latency and is much faster than both SSD and HDD",
+                ""
+            ],
+            "guid": "Oy4nOJ66XI",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A&nbsp;{{c1::file::abstraction}} is a linear series of bytes",
+                ""
+            ],
+            "guid": "4A!}Dz*kx",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The two goals file systems struggle with are&nbsp;{{c1::performance}} and&nbsp;{{c2::reliablility}}",
+                "File systems need to be performant and they need files to continue existing if there is a power outage"
+            ],
+            "guid": "JpaHi6q8eU",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
         }
     ],
     "reviewLimit": null,
