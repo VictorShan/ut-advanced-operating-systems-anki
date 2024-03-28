@@ -1480,6 +1480,546 @@
             "tags": [
                 "storage-virtualization"
             ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Polling}} to access storage devices has low latency but wastes CPU cycles",
+                ""
+            ],
+            "guid": "w[00<:+=wq",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Interrupts}} have higher {{c2::latency&nbsp;}} when accessing storage devices but uses fewer&nbsp;{{c3::CPU cycles}}",
+                "CPU may not know that device is available until the next interrupt"
+            ],
+            "guid": "b`VebMFD7q",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "CPU can setup the memory and device buffers for the device so it can transfer data using&nbsp;{{c1::Direct Memory Access}}",
+                ""
+            ],
+            "guid": "pp>`,Vq]zy",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In a {{c1::HDD}}, the disk is divided into {{c2::tracks}}, which are divided into {{c3::sectors}}",
+                "A track runs along the disk like circumference. A sector is a section of that track. The speed of access relies on RPM seek time and transfer time<br>"
+            ],
+            "guid": "FkF@Sccbw7",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "To calculate the speed of HDD, you need the sum of {{c3::seek time}}, {{c2::rotation time}},&nbsp; and {{c1::transfer time}}",
+                "<ul><li>Rotation time is the rotation speed of the disk</li><li>Seek time is repositioning the head to the correct track (2ms)</li><li>Transfer time depends on how dense your data is</li></ul>"
+            ],
+            "guid": "IXVgq;$U+f",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::SSD}}s are composed of {{c2::flash cells}} that store data by adding electrons to a floating gate",
+                "To read, we must see the amount of electrons in the cell. Multi level cells can store multiple bits by the amount of electrons in the cell"
+            ],
+            "guid": "uT+S%XXUn<",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c3::SSD}}s contain {{c1::NAND}} (cheaper, lower latency) and {{c2::NOR}} (finer grained access) flash cells",
+                ""
+            ],
+            "guid": "dnd{tez%df",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::SSD}}s is a {{c4::flash package}} connected to a {{c5::I/O Bus}}. It has&nbsp;multiple '{{c2::die}}'s which contain multiple {{c3::planes}} which contain blocks and a register.",
+                "Dies can run in parallel<br>Some operations can be run concurrently in planes"
+            ],
+            "guid": "k|NS_c2}0*",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In {{c1::SSD}}s, {{c2::Blocks}} can be erased, {{c3::pages}} can be written and read",
+                "<div>The entire block needs to be copied to another block before it can be updated because it will be erased an rewritten</div><ul><li>Small block Single Level Cell: Block size 16KB, Page size 512 bytes</li><li>Large-block Multi LC: Block size 512 KB, Page size 4KB</li></ul><div>There are also Out Of Bounds (OOB) bytes for every page (16-128 bytes) used for checksums.</div>"
+            ],
+            "guid": "A$K<^z^|sj",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "To update, {{c1::SSD}}s must erase than write.",
+                "<ul><li>SSDs only writes by changing 0 to 1 (adding charge) so it must erase the entire block before writing.</li><li>There is a limited number of possible writes an SSD flash cell can perform (10^6)</li><li>Reads are faster than writes due to this</li></ul>"
+            ],
+            "guid": "vSM$?,TKvi",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The {{c1::FTL}} translates the logical pages in the {{c2::SSD}} to physical pages. Located on the {{c3::device::host/client}}",
+                "Flash Translation Layer (FTL) also:<br><ul><li>Garbage collects old pages</li><li>Wear leveling management by choosing pages carefully and spread out writes so wear is equal</li><li>Parallel IO</li><li>Error handling</li></ul><div>Research SSDs can have FTL on the host instead of the device</div>"
+            ],
+            "guid": "nc0W3Z*no!",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c2::Crash recovery}} refers to ensuring data {{c1::integrity}} in file systems even after system crashes or power loss.",
+                ""
+            ],
+            "guid": "euvOr,Z68s",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Most storage systems lack an {{c1::atomic}} multi-block primitive, leading to potential data inconsistencies during file system operations.",
+                ""
+            ],
+            "guid": "zVUuoW^UAI",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Creating a new file involves updating multiple components on storage, such as the {{c1::inode}}, {{c2::directory}}, and {{c3::inode bitmap}}.",
+                "Failure to complete these updates due to a crash can result in storage leakage or data corruption."
+            ],
+            "guid": "B,&c7rYGzF",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "File systems use {{c1::transactions}} to ensure {{c2::atomicity}} and {{c3::durability}} of updates, guaranteeing that either all updates within a transaction are persisted or none of them are.",
+                ""
+            ],
+            "guid": "vndS^wS(f~",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A {{c2::crash-consistent}} file system ensures that critical data structures remain intact despite crashes, preventing issues like {{c1::double allocation}} of blocks or inodes.",
+                ""
+            ],
+            "guid": "@Vv_*yaQ#",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "While users prioritize data {{c1::integrity}} and {{c2::accessibility}} after a crash, {{c3::crash consistency}} primarily focuses on preserving file system integrity rather than data.",
+                ""
+            ],
+            "guid": "g(J^&wQ9#Z",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Most file systems protect data from {{c3::corruption}} even after a crash, although data {{c2::availability}} may depend on proper {{c1::synchronization}} between memory and storage.",
+                ""
+            ],
+            "guid": "j<{p0Hz3Ms",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "File systems provide security measures, such as {{c1::zeroing out}} data blocks before reallocation to prevent {{c2::unauthorized access}} to sensitive information.",
+                ""
+            ],
+            "guid": "k=%hiue<W)",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Modern file systems offer more than just crash {{c1::consistency}}, providing additional features for data protection and security.",
+                ""
+            ],
+            "guid": "fUDR!G&t{E",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Crash consistency in modern file systems relies on two main techniques: {{c1::Logging}} and {{c2::Shadow Paging}}.",
+                ""
+            ],
+            "guid": "k;3w2Lx|/Q",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Logging and Shadow Paging ultimately aim to ensure {{c1::atomicity}} and {{c2::consistency}} in file system modifications by employing {{c3::copy}}-based strategies.",
+                ""
+            ],
+            "guid": "hjOcl]0GGm",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Logging involves writing data to a log before {{c1::committing}} it to the actual file system. A special commit block ensures {{c2::atomicity}}.",
+                "Logging, originating from the database community, writes data to a log before committing changes,"
+            ],
+            "guid": "oQ767+j8Ut",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Shadow Paging}} organizes information in a {{c2::tree}} structure and creates copies of modified data blocks along with their parent nodes.",
+                "<ul><li>Changes are finalized by atomically switching to the new tree structure.</li><li>Shadow Paging, historically used for providing transactions, creates new subtrees to reflect modifications.</li></ul>"
+            ],
+            "guid": "A<pyW7#lQA",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Logging}} typically requires {{c2::less::more/less}} overhead for metadata operations but might incur {{c3::additional::additional/fewer}} write amplification due to writing changes twice (once to the log and once to the file system)",
+                "<ul><li>ext4 and xv6 use Logging</li><li>can be efficient for systems with high write throughput because it allows changes to be batched and written sequentially to the log<br></li></ul>"
+            ],
+            "guid": "ly~:KXj=an",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Shadow Paging}} may involve more {{c2::complex::simple/complex}} metadata management due to the tree structure and the need to manage pointers effectively",
+                "<ul><li>Examples of file systems employing Shadow Paging and copy-on-write techniques include btrfs and ZFS.</li><li>minimize write amplification compared to Logging because modifications are written directly to new data blocks without needing to be duplicated in a log<br></li></ul>"
+            ],
+            "guid": "o)>Wd|cU0{",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Hardware}} support is crucial for crash recovery in file systems due to complexities introduced by storage devices.",
+                ""
+            ],
+            "guid": "t7N%hj.uy8",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Storage devices have caches ({{c1::SRAM}} or {{c2::DRAM}}) to enhance performance, but cached data is {{c3::volatile}} and can be lost in a power outage.",
+                ""
+            ],
+            "guid": "QK7tJtmU96",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The order in which data is written to storage media can be unpredictable due to {{c1::caching}} and {{c2::queueing}} mechanisms.",
+                ""
+            ],
+            "guid": "N7l3d0H-{:",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Two important hardware supports needed for crash recovery are {{c1::Flush}} and {{c2::Fence}}.",
+                "<ul><li>Flush ensures data is written from cache to persistent media in a controlled manner</li><li>Fence provides more flexibility in controlling the order of data persistence without dictating the exact timing of writes<br></li></ul>"
+            ],
+            "guid": "MTAmmO;QY[",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Flush}} ensures data is written from cache to {{c2::persistent::ephemeral/persistent}} media in a controlled manner but are {{c3::coarse::fine/coarse}}-grained and may lead to inefficiencies",
+                ""
+            ],
+            "guid": "H#g`HGR^gq",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Fence}} provides more {{c2::flexibility}} in controlling the order of data persistence without dictating the exact timing of writes",
+                ""
+            ],
+            "guid": "x0uo0*q,89",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Efficient crash recovery requires control over the order of {{c2::IO operations}} and the timing of data {{c1::durability}}",
+                ""
+            ],
+            "guid": "N[es1tV6e",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In modern storage devices with persistent memory, Flush and Fence support exists, but older devices like hard drives may lack {{c1::Fence}} support",
+                ""
+            ],
+            "guid": "j&I(Gxu-$.",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Fence}} instructions may be implemented using {{c2::Flush}} commands in devices without native {{c1::Fence}} support",
+                ""
+            ],
+            "guid": "y+Gp[svW`{",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c3::BTFS::File system}} is a {{c1::copy-on-write}} file system that offers performing efficient {{c2::snapshot}}s and cloning",
+                ""
+            ],
+            "guid": "dN<=M{#{YX",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::BTRFS}} uses {{c2::shadow paging}} where updates involve copying nodes from the leaf to the root and atomic commit point is when the new root is written",
+                ""
+            ],
+            "guid": "EPp8]7$2;-",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::BTRFS::File system}} has the {{c2::wandering tree}} problem&nbsp;that is reduced by using&nbsp;{{c3::log}}-based {{c4::batch}} updates&nbsp;",
+                "Wandering Tree Problem: Changes at lower levels of the tree propagate up, impacting performance. Minor updates may require modifying many nodes<br><br>Logging and batching updates reduces frequency of tree updates"
+            ],
+            "guid": "Bp&dbZVB:R",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c3::BTRFS::File system}} has {{c1::locallity}} issues caused by {{c2::frequent}} node allocation scattering data and reducing {{c4::read::read/write}} performance",
+                ""
+            ],
+            "guid": "y}o$e2Jkn1",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c2::Shadow paging::Crash recovery technique}} uses&nbsp;{{c1::garbage collection}} to clean up unused nodes at the cost of performance",
+                ""
+            ],
+            "guid": "NPE~A~M&Dx",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Logging::Crash recovery technique}} writes the data first to the {{c1::log}} then a {{c2::commit}} block is written",
+                "The operations in the log can be replayed. Update before commit block is written are discarded on crash"
+            ],
+            "guid": "hHb`=##GER",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Operations in the {{c1::log}} must be {{c2::idempotent}} so they can be replayed without affecting the result",
+                ""
+            ],
+            "guid": "iH{^~mIt,z",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Write-ahead}}-/{{c2::redo}}-logging is when we write to the log first",
+                "Used by xv6 and ext4"
+            ],
+            "guid": "A%dcd>@P.b",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Physical}} logging is when the whole block of memory is written into the log whereas {{c2::logical}} logging only stores the operations",
+                "Logical locking saves log space but is more complex and prone to bugs"
+            ],
+            "guid": "x*w(X?]hiV",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Undo}}-logging makes a copy of existing data and throws away changes if it fails",
+                "Slower than write-ahead. SQLite defaults to undo logging but can do both"
+            ],
+            "guid": "LHg/>#);zF",
+            "note_model_uuid": "b21fc8a2-c337-11ee-ba01-25ef8c141b52",
+            "tags": [
+                "storage-virtualization"
+            ]
         }
     ],
     "reviewLimit": null,
