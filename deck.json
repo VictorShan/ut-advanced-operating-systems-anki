@@ -1248,7 +1248,7 @@
         {
             "__type__": "Note",
             "fields": [
-                "Page faults are expensive becaues they involve the OS&nbsp;{{c1::finding free physical memory}},&nbsp;{{c2::page walk}}, and {{c3::changing entry in table}}",
+                "Page faults are expensive becaues they involve the OS finding&nbsp;{{c1::free physical memory}},&nbsp;{{c2::page walk}}, and {{c3::changing entry in table}}",
                 "Page walk is needed to find the page table entry that repsents that address. That entry then needs to be changed. We can pre-fault pages to pre-allocate them"
             ],
             "guid": "IZr}4y2dOy",
